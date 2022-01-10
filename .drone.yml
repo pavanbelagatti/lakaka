@@ -7,3 +7,15 @@ steps:
   commands:
   - pip install -r requirements.txt
   - pytest
+  
+- name: docker  
+  image: plugins/docker
+  settings:
+    # registry: docker.io
+    repo: pavansa/lakaka
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags: 
+      - latest
